@@ -20,7 +20,7 @@ const headerNav = [
 ];
 
 const Header = props => {
-  console.log(props)
+  // console.log(props)
   const { pathname } = useLocation();
   const headerRef = useRef(null);
 

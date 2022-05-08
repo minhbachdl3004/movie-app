@@ -15,7 +15,7 @@ const ExternalID = (props) => {
     const getMoviesCredits = async () => {
       const res = await tmdbApi.external_ids(keyword, props.id);
       setExternalID(res);
-      console.log(external_ids);
+      // console.log(external_ids);
     };
     getMoviesCredits();
   }, [external_ids, props.id]);

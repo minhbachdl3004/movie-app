@@ -15,7 +15,7 @@ const MovieCredits = (props) => {
     const getMoviesCredits = async () => {
       const res = await tmdbApi.combined_credits(keyword, props.id);
       setMovies(res.cast.filter((c) => c.backdrop_path != null).filter(c => c.id !== 397722));
-      console.log(movies);
+      // console.log(movies);
     };
     getMoviesCredits();
   }, [movies, props.id]);

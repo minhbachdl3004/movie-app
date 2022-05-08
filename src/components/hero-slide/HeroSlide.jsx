@@ -24,7 +24,7 @@ const HeroSlide = () => {
           params,
         });
         setMovieItems(response?.results.slice(1, 5));
-        console.log(response);
+        // console.log(response);
       } catch {
         console.log("error");
       }
@@ -73,7 +73,7 @@ const HeroSlideItem = (props) => {
 
     const videos = await tmdbApi.getVideos(category.movie, item.id);
 
-    console.log(videos);
+    // console.log(videos);
 
     if (videos.results.length > 0) {
       const videoSrc = `https://www.youtube.com/embed/` + videos.results[0].key;

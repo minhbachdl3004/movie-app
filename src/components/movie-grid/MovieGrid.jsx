@@ -17,7 +17,7 @@ import { useHistory } from "react-router-dom";
 
 const MovieGrid = props => {
 
-  console.log(props)
+  // console.log(props)
 
   const [items, setItems] = useState([]);
   
@@ -27,7 +27,7 @@ const MovieGrid = props => {
 
   const { keyword } = useParams();
   
-  console.log(keyword)
+  // console.log(keyword)
 
   useEffect(() => {
     const getList = async () => {
@@ -100,7 +100,7 @@ const MovieGrid = props => {
 
 const MovieSearch = props => {
 
-  console.log(props);
+  // console.log(props);
 
   const history = useHistory();
 

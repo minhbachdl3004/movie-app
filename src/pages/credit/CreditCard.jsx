@@ -11,7 +11,7 @@ import "./credit.scss";
 const CreditCard = (props) => {
   const item = props.item;
 
-  console.log(props);
+  // console.log(props);
 
   const link = "/" + category["person"] + "/" + item.id;
 

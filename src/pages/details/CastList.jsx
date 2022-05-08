@@ -11,7 +11,7 @@ const CastList = (props) => {
 
   const { category } = useParams();
 
-  console.log(props);
+  // console.log(props);
 
   const [casts, setCasts] = useState([]);
 
@@ -19,7 +19,7 @@ const CastList = (props) => {
     const getCredits = async () => {
       const res = await tmdbApi.credits(category, props.id);
       setCasts(res.cast.slice(0, 5));
-      console.log(casts);
+      // console.log(casts);
     };
     getCredits();
   }, [casts, category, props.id]);

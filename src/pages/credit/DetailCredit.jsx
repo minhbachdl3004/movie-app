@@ -13,7 +13,7 @@ import ExternalID from "./ExternalID";
 const DetailCredit = () => {
   const { category, id } = useParams();
 
-  console.log(category, id);
+  // console.log(category, id);
 
   const [item, setItem] = useState(null);
   const keyword = "person";
@@ -22,7 +22,7 @@ const DetailCredit = () => {
     const getDetailCredit = async () => {
       const response = await tmdbApi.person(keyword, id, { params: {} });
       setItem(response);
-      console.log(item);
+      // console.log(item);
     };
     getDetailCredit();
   }, [item, id]);

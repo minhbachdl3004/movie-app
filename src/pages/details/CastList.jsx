@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 
 import tmdbApi from "../../api/tmdbApi";
 
+import { SwiperSlide, Swiper } from "swiper/react";
+
 
 import CreditCard from "../credit/CreditCard";
 
@@ -18,17 +20,21 @@ const CastList = (props) => {
   useEffect(() => {
     const getCredits = async () => {
       const res = await tmdbApi.credits(category, props.id);
-      setCasts(res.cast.slice(0, 5));
-      // console.log(casts);
+      setCasts(res.cast.filter(c => c.profile_path != null).slice(0, 10));
+      console.log(casts);
     };
     getCredits();
   }, [casts, category, props.id]);
 
   return (
     <div className="casts">
-      {casts.map((item, i) => (
-        <CreditCard item={item} />
-      ))}
+      <Swiper grabCursor={true} spaceBetween={10} slidesPerView={"auto"}>
+        {casts.map((item, i) => (
+          <SwiperSlide key={i}>
+            <CreditCard item={item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

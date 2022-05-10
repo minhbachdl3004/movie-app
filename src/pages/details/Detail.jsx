@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom/';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom/";
 
-import tmdbApi from '../../api/tmdbApi';
-import apiConfig from '../../api/apiConfig';
+import tmdbApi from "../../api/tmdbApi";
+import apiConfig from "../../api/apiConfig";
 
-import './detail.scss';
-import CastList from './CastList';
-import VideoList from './VideoList';
-import MovieList from '../../components/movie-list/MovieList';
+import "./detail.scss";
+import CastList from "./CastList";
+import VideoList from "./VideoList";
+import MovieList from "../../components/movie-list/MovieList";
+// import UserScore from "../../components/user-score/UserScore";
 
 const Detail = () => {
-
   const { category, id } = useParams();
 
   // console.log(category, id);
@@ -21,10 +21,11 @@ const Detail = () => {
     const getDetail = async () => {
       const response = await tmdbApi.detail(category, id, { params: {} });
       setItem(response);
+      // console.log(response);
       window.scrollTo(0, 0);
     };
     getDetail();
-  }, [category, id])
+  }, [category, id]);
 
   return (
     <>
@@ -50,15 +51,14 @@ const Detail = () => {
               ></div>
             </div>
             <div className="movie-content__info">
-              <div className="title">
-                {item.title || item.name}
-              </div>
+              <div className="title">{item.title || item.name}</div>
               <div className="genres">
-                {
-                  item.genres && item.genres.slice(0, 5).map((genre, i) => (
-                    <span key={i} className="genres__item">{genre.name}</span>
-                  ))
-                }
+                {item.genres &&
+                  item.genres.slice(0, 5).map((genre, i) => (
+                    <span key={i} className="genres__item">
+                      {genre.name}
+                    </span>
+                  ))}
               </div>
               <div className="overview">{item.overview}</div>
               <div className="cast">
@@ -84,6 +84,6 @@ const Detail = () => {
       )}
     </>
   );
-}
+};
 
 export default Detail;

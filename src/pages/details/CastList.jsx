@@ -21,7 +21,7 @@ const CastList = (props) => {
     const getCredits = async () => {
       const res = await tmdbApi.credits(category, props.id);
       setCasts(res.cast.filter(c => c.profile_path != null).slice(0, 10));
-      console.log(casts);
+      // console.log(casts);
     };
     getCredits();
   }, [casts, category, props.id]);

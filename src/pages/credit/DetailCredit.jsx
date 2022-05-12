@@ -64,8 +64,8 @@ const DetailCredit = () => {
                   <dt><strong>Also Known As</strong></dt>
                   <ul>
                     {
-                      item.also_known_as.slice(0, 5).map((item, i) => (
-                        <li className="additionalName">{item}</li>
+                      item.also_known_as.slice(0, 5).map((item) => (
+                        <li key={item.id} className="additionalName">{item}</li>
                       ))
                     }
                   </ul>

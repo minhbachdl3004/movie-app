@@ -48,8 +48,8 @@ const Genre = () => {
       <div className="container">
         <div className="section mb-3">
           <div className="movie-grid">
-            {items.map((item, i) => (
-              <MovieCard category={category} item={item} key={i} />
+            {items.map((item) => (
+              <MovieCard category={category} item={item} key={item.id} />
             ))}
           </div>
         </div>

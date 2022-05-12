@@ -24,8 +24,8 @@ const MovieCredits = (props) => {
     <>
       <div className="movie-list">
         <Swiper grabCursor={true} spaceBetween={10} slidesPerView={"auto"}>
-          {movies.map((item, i) => (
-            <SwiperSlide key={i}>
+          {movies.map((item) => (
+            <SwiperSlide key={item.id}>
               <MovieCard item={item} category={item.media_type} />
             </SwiperSlide>
           ))}

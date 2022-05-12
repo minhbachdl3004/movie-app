@@ -22,8 +22,18 @@ const ExternalID = (props) => {
 
   return (
     <>
-    <InstagramIcon fontSize="large" onClick={() => window.open(`https://www.instagram.com/${external_ids.instagram_id}`)} />
-      <TwitterIcon fontSize="large" onClick={() => window.open(`https://twitter.com/${external_ids.instagram_id}`)} />
+      <InstagramIcon
+        fontSize="large"
+        onClick={() =>
+          window.open(`https://www.instagram.com/${external_ids.instagram_id}`)
+        }
+      />
+      <TwitterIcon
+        fontSize="large"
+        onClick={() =>
+          window.open(`https://twitter.com/${external_ids.instagram_id}`)
+        }
+      />
     </>
   );
 }

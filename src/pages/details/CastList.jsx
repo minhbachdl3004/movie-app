@@ -29,8 +29,8 @@ const CastList = (props) => {
   return (
     <div className="casts">
       <Swiper grabCursor={true} spaceBetween={10} slidesPerView={"auto"}>
-        {casts.map((item, i) => (
-          <SwiperSlide key={i}>
+        {casts.map((item) => (
+          <SwiperSlide key={item.id}>
             <CreditCard item={item} />
           </SwiperSlide>
         ))}

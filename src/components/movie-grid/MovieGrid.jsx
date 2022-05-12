@@ -84,8 +84,8 @@ const MovieGrid = props => {
         <MovieSearch category={props.category} keyword={keyword} />
       </div>
       <div className="movie-grid">
-        {items.map((item, i) => (
-          <MovieCard category={props.category} item={item} key={i} />
+        {items.map((item) => (
+          <MovieCard category={props.category} item={item} key={item.id} />
         ))}
       </div>
       {page < totalPage ? (

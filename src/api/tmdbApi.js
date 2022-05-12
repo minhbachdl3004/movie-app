@@ -58,6 +58,10 @@ const tmdbApi = {
   external_ids: (person, id) => {
     const url = category[person] + "/" + id + "/external_ids";
     return axiosClient.get(url, { params: {}})
+  },
+  getGenresList: (genres, params) => {
+    const url = "/discover/movie";
+    return axiosClient.get(url, params);
   }
 };
 

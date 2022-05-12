@@ -2,4 +2,17 @@
 
 .percent {
     position: relative;
+
+    & > * {
+        background-color: black;
+        border-radius: 50%;
+    }
 }
+
+.score {
+    position: absolute;
+    color: $white;
+    z-index: 2;
+    margin-right: 1px;
+}
+

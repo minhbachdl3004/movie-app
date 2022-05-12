@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom/";
+import { useParams, Link } from "react-router-dom/";
 
 import tmdbApi from "../../api/tmdbApi";
 import apiConfig from "../../api/apiConfig";
@@ -13,7 +13,7 @@ import MovieList from "../../components/movie-list/MovieList";
 const Detail = () => {
   const { category, id } = useParams();
 
-  // console.log(category, id);
+  console.log(category, id);
 
   const [item, setItem] = useState(null);
 
@@ -55,9 +55,11 @@ const Detail = () => {
               <div className="genres">
                 {item.genres &&
                   item.genres.slice(0, 5).map((genre, i) => (
-                    <span key={i} className="genres__item">
-                      {genre.name}
-                    </span>
+                    <Link to={`/genre/${genre.id}-${genre.name}-${category}`}>
+                      <span key={i} className="genres__item">
+                        {genre.name}
+                      </span>
+                    </Link>
                   ))}
               </div>
               <div className="overview">{item.overview}</div>

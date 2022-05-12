@@ -49,6 +49,7 @@ const MovieGrid = props => {
         response = await tmdbApi.search(props.category, { params });
       }
       setItems(response.results);
+      // setItems(response.results.filter(c => c.genre_ids.includes(28)));
       setTotalPage(response.total_pages);
     };
     getList();

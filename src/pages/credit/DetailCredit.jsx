@@ -11,9 +11,7 @@ import ExternalID from "./ExternalID";
 
 
 const DetailCredit = () => {
-  const { category, id } = useParams();
-
-  // console.log(category, id);
+  const { id } = useParams();
 
   const [item, setItem] = useState(null);
   const keyword = "person";

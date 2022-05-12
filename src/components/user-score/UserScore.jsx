@@ -20,7 +20,7 @@ const UserScore = (props) => {
                   fontSize: 12,
                 }}
               >
-                {item * 10 + "%"}
+                <span className="score">{item * 10 + "%"}</span>
               </span>
               <CircularProgress
                 variant="determinate"
@@ -38,7 +38,7 @@ const UserScore = (props) => {
                   fontSize: 12,
                 }}
               >
-                {item * 10 + "%"}
+                <span className="score">{item * 10 + '%'}</span>
               </span>
               <CircularProgress
                 variant="determinate"
@@ -56,7 +56,7 @@ const UserScore = (props) => {
                   fontSize: 12,
                 }}
               >
-                {item * 10 + "%"}
+                <span className="score">{item * 10 + "%"}</span>
               </span>
               <CircularProgress
                 variant="determinate"

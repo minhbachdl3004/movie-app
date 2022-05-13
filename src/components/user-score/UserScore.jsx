@@ -6,6 +6,7 @@ import "./user-score.scss";
 
 const UserScore = (props) => {
   const item = props.item;
+  // console.log(item);
   return (
     <>
       {item !== 0 ? (
@@ -20,7 +21,7 @@ const UserScore = (props) => {
                   fontSize: 12,
                 }}
               >
-                <span className="score">{item * 10 + "%"}</span>
+                <span className="score">{Math.floor(item * 10) + "%"}</span>
               </span>
               <CircularProgress
                 variant="determinate"
@@ -38,7 +39,7 @@ const UserScore = (props) => {
                   fontSize: 12,
                 }}
               >
-                <span className="score">{item * 10 + '%'}</span>
+                <span className="score">{Math.floor(item * 10) + '%'}</span>
               </span>
               <CircularProgress
                 variant="determinate"
@@ -56,7 +57,7 @@ const UserScore = (props) => {
                   fontSize: 12,
                 }}
               >
-                <span className="score">{item * 10 + "%"}</span>
+                <span className="score">{Math.floor(item * 10) + "%"}</span>
               </span>
               <CircularProgress
                 variant="determinate"

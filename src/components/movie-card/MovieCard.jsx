@@ -15,13 +15,14 @@ import { Skeleton } from "antd";
 const MovieCard = (props) => {
   const item = props.item;
 
+
   const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
     setImgLoaded(false);
   }, [item.poster_path, item.backdrop_path]);
 
-  console.log(item);
+  console.log(item.vote_average);
 
   const link = "/" + category[props.category] + "/" + item.id;
 
@@ -37,7 +38,7 @@ const MovieCard = (props) => {
         className="movie-card ease-in-out"
         style={{ backgroundImage: `url(${bg})` }}
       >
-        <UserScore item={item.vote_average} />
+        <UserScore item={Math.floor(item.vote_average)} />
       </div>
       <div className="movie-info">
         <div className="movie-info__name ">{item.title || item.name}</div>

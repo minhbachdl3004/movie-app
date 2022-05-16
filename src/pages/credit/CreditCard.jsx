@@ -20,14 +20,14 @@ const CreditCard = (props) => {
   const bg = apiConfig.w500image(item.profile_path);
 
   return (
-    <Link to={link}>
+    <Link className="relative block w-10 overflow-hidden rounded-lg credit-card" to={link}>
       <div
-        className="credit-card"
+        className="credit-card-bg"
         style={{ backgroundImage: `url(${bg})` }}
       ></div>
       <div className="credit-info flex flex-col gap-2 p-2.5">
-        <div className="credit-info__name h-10 text-base font-medium leading-5">{item.name}</div>
-        <div className="credit-info__character">{item.character}</div>
+        <div className="credit-info__name  h-10 text-base overflow-hidden font-medium leading-5">{item.name}</div>
+        <div className="credit-info__character overflow-hidden">{item.character}</div>
       </div>
     </Link>
   );

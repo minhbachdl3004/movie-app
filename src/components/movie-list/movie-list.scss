@@ -1,9 +1,9 @@
-@use '../../scss/breakpoint' as *;
+@use '../../scss/breakpoint'as *;
 
 .movie-list {
     .swiper-slide {
         width: 264px;
-
+        
         @include tablet {
             width: 30%;
         }

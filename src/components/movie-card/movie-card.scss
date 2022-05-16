@@ -1,16 +1,42 @@
-@use "../../scss/" as *;
+@use "../../scss/"as *;
 
-.movie-card {
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.h-32 {
+    height: 32rem;
+}
+
+.w-64 {
+    width: 16rem;
+}
+
+.block {
+    display: block;
+}
+
+.relative {
+    position: relative;
+}
+
+.movie-card:hover {
+    transform: translateY(-0.25rem);
+    transition: transform .2s ease-in-out;
+}
+
+.movie-card-bg {
     position: relative;
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-top: 160%;
-    border-radius: 8px;
+    padding-top: 140%;
     margin-bottom: 1rem;
     margin-right: 0.5rem;
-    
-    
 
     // .btn {
     //     position: absolute;
@@ -29,9 +55,7 @@
         right: 0;
         background-color: $black;
         opacity: 0;
-        transition: opacity 0.3s ease;
-        border-radius: 8px;
-        
+
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -39,9 +63,6 @@
             opacity: 0.5;
         }
 
-        &:hover .btn {
-            transform: translate(-50%, -50%) scale(1);
-        }
     }
 }
 
@@ -52,6 +73,7 @@
     flex-direction: column;
     border-bottom: 1px solid rgb(83, 82, 82);
     background-image: linear-gradient(to top, #252424, rgba(19, 13, 13, 0.075));
+    border-radius: 8px;
 
     &__name {
         line-height: 1.25rem;
@@ -60,7 +82,7 @@
         height: 2.5rem;
         overflow: hidden;
     }
-    
+
     &__date {
         color: $txt-color;
         font-size: .75rem;

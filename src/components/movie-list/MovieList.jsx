@@ -34,6 +34,7 @@ const MovieList = props => {
     };
     getList();
   }, [props.category, props.id, props.type]);
+
   return (
     <div className="movie-list">
       <Swiper grabCursor={true} spaceBetween={10} slidesPerView={"auto"}>

@@ -118,3 +118,10 @@
         border: 3px solid $main-color;
     }
 }
+
+.release-year {
+    display: inline-block;
+    color: $main-color;
+    margin-left: 0.5rem;
+    font-size: 2.25rem;
+}

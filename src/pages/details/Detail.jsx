@@ -21,7 +21,7 @@ const Detail = () => {
     const getDetail = async () => {
       const response = await tmdbApi.detail(category, id, { params: {} });
       setItem(response);
-      // console.log(response);
+      console.log(response);
       window.scrollTo(0, 0);
     };
     getDetail();
@@ -51,7 +51,12 @@ const Detail = () => {
               ></div>
             </div>
             <div className="movie-content__info">
-              <div className="title">{item.title || item.name}</div>
+              <div className="title">
+                {item.title || item.name}
+                <span className="release-year">
+                  ({item.release_date ? item.release_date.split("-")[0] : item.first_air_date.split("-")[0]})
+                </span>
+              </div>
               <div className="genres">
                 {item.genres &&
                   item.genres.slice(0, 5).map((genre) => (
@@ -61,10 +66,6 @@ const Detail = () => {
                       </span>
                     </Link>
                   ))}
-                  <span className="duration">
-                    {Math.floor(item.runtime / 60)}h
-                    {item.runtime % 60}min
-                  </span>
               </div>
               <div className="overview">{item.overview}</div>
               <div className="cast">

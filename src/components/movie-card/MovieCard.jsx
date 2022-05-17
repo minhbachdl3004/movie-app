@@ -32,7 +32,7 @@ const MovieCard = (props) => {
       className="relative block w-64 h-32 overflow-hidden rounded-lg movie-card"
       to={link}
     >
-      {loading && <SkeletonLoading className="skeleton-img"  />}
+      {loading && <SkeletonLoading className="skeleton-img" />}
       {!loading && (
         <>
           <div
@@ -44,7 +44,7 @@ const MovieCard = (props) => {
           <div className="movie-info">
             <div className="movie-info__name ">{item.title || item.name}</div>
             <div className="movie-info__date">
-              {item.release_date || item.first_air_date}
+              {item.release_date ? item.release_date : item.first_air_date}
             </div>
           </div>
         </>

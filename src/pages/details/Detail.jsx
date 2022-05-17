@@ -13,7 +13,7 @@ import MovieList from "../../components/movie-list/MovieList";
 const Detail = () => {
   const { category, id } = useParams();
 
-  // console.log(category, id);
+  console.log(category, id);
 
   const [item, setItem] = useState(null);
 
@@ -61,6 +61,10 @@ const Detail = () => {
                       </span>
                     </Link>
                   ))}
+                  <span className="duration">
+                    {Math.floor(item.runtime / 60)}h
+                    {item.runtime % 60}min
+                  </span>
               </div>
               <div className="overview">{item.overview}</div>
               <div className="cast">

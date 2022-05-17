@@ -29,7 +29,7 @@ const MovieCard = (props) => {
 
   return (
     <Link
-      className="relative block w-64 h-32 overflow-hidden rounded-lg movie-card"
+      className="relative block overflow-hidden rounded-lg movie-card"
       to={link}
     >
       {loading && <SkeletonLoading className="skeleton-img" />}

@@ -14,7 +14,7 @@ import SkeletonLoading from "../skeleton-loading/SkeletonLoading";
 const MovieCard = (props) => {
   const item = props.item;
 
-  console.log(item);
+  // console.log(item);
 
   const link = "/" + category[props.category] + "/" + item.id;
 

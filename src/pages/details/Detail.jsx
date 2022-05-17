@@ -13,7 +13,7 @@ import MovieList from "../../components/movie-list/MovieList";
 const Detail = () => {
   const { category, id } = useParams();
 
-  console.log(category, id);
+  // console.log(category, id);
 
   const [item, setItem] = useState(null);
 

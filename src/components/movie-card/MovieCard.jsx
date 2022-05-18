@@ -12,7 +12,6 @@ import UserScore from "../user-score/UserScore";
 import SkeletonLoading from "../skeleton-loading/SkeletonLoading";
 
 const MovieCard = (props) => {
-  // const category = props.category;
   const item = props.item;
 
   // console.log(item);

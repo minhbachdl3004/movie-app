@@ -15,7 +15,7 @@ const MovieCard = (props) => {
   const category = props.category;
   const item = props.item;
 
-  console.log(item);
+  // console.log(item);
 
   const link = "/" + category[props.category] + "/" + item.id;
 

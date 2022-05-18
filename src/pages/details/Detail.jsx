@@ -13,7 +13,7 @@ import MovieList from "../../components/movie-list/MovieList";
 const Detail = () => {
   const { category, id } = useParams();
 
-  console.log(category, id);
+  // console.log(category, id);
 
   const [item, setItem] = useState(null);
 
@@ -21,7 +21,7 @@ const Detail = () => {
     const getDetail = async () => {
       const response = await tmdbApi.detail(category, id, { params: {} });
       setItem(response);
-      console.log(response);
+      // console.log(response);
       window.scrollTo(0, 0);
     };
     getDetail();

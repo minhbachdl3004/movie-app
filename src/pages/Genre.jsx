@@ -22,8 +22,6 @@ const Genre = () => {
   const genre = queryArr[2];
 
 
-  console.log(id, category, genre);
-
   const [items, setItems] = useState([]);
 
   useEffect(() => {

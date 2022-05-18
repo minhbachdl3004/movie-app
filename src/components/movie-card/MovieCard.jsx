@@ -46,8 +46,8 @@ const MovieCard = (props) => {
             <div className="movie-info__detail">
               <span className="movie-info__date">
                 {item.release_date
-                  ? item.release_date.split("-")[0]
-                  : item.first_air_date.split("-")[0]}
+                  ? item.release_date
+                  : item.first_air_date}
               </span>
               <span className="category">{props.category === "movie" ? props.category.charAt(0).toUpperCase() + props.category.slice(1) : 'TV'}</span>
             </div>

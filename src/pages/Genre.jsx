@@ -31,7 +31,7 @@ const Genre = () => {
       axios
         .get(url)
         .then((res) => {
-          // console.log(res.data);
+          console.log(res.data);
           setItems(res.data.results);
         })
         .catch((error) => console.error(error));

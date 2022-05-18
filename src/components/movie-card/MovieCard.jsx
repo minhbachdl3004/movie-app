@@ -12,7 +12,7 @@ import UserScore from "../user-score/UserScore";
 import SkeletonLoading from "../skeleton-loading/SkeletonLoading";
 
 const MovieCard = (props) => {
-  const category = props.category;
+  // const category = props.category;
   const item = props.item;
 
   // console.log(item);
@@ -50,7 +50,7 @@ const MovieCard = (props) => {
                   ? item.release_date.split("-")[0]
                   : item.first_air_date.split("-")[0]}
               </span>
-              <span className="category">{category == "movie" ? category.charAt(0).toUpperCase() + category.slice(1) : 'TV'}</span>
+              <span className="category">{props.category === "movie" ? props.category.charAt(0).toUpperCase() + props.category.slice(1) : 'TV'}</span>
             </div>
           </div>
         </>

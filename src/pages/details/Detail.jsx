@@ -60,7 +60,7 @@ const Detail = () => {
               <div className="genres">
                 {item.genres &&
                   item.genres.slice(0, 5).map((genre) => (
-                    <Link to={`/genre/${genre.id}-${genre.name}-${category}`}>
+                    <Link to={`/genre/${genre.id}-${category}-${genre.name}`}>
                       <span key={genre.id} className="genres__item">
                         {genre.name}
                       </span>

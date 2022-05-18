@@ -16,10 +16,13 @@ const Genre = () => {
   const queryArr = query.split("-");
 
   const id = queryArr[0];
-  
-  const genre = queryArr[1];
 
-  const category = queryArr[2];
+  const category = queryArr[1];
+  
+  const genre = queryArr[2];
+
+
+  console.log(id, category, genre);
 
   const [items, setItems] = useState([]);
 

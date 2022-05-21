@@ -7,7 +7,6 @@ import MovieList from "../components/movie-list/MovieList";
 
 import { category, movieType, tvType } from "../api/tmdbApi";
 
-import SkeletonLoading from '../components/skeleton-loading/SkeletonLoading';
 
 const Home = () => {
   return (
@@ -64,7 +63,6 @@ const Home = () => {
         </div>
         <MovieList category={category.tv} type={tvType.top_rated} />
       </div>
-      <SkeletonLoading></SkeletonLoading>
     </>
   );
 };

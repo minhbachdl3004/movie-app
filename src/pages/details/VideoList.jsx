@@ -39,10 +39,10 @@ const Video = (props) => {
   return (
     <div className="video">
       <div className="video__title">
-        <h2>{item.name}</h2>
+        <h2>{item.name ? item.name : ''}</h2>
       </div>
       <iframe
-        src={`https://www.youtube.com/embed/${item.key}`}
+        src={`https://www.youtube.com/embed/${item.key ? item.key : ''}`}
         ref={iframeRef}
         width="100%"
         title="video"

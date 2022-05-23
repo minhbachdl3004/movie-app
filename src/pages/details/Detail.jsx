@@ -45,7 +45,7 @@ const Detail = () => {
                 className="movie-content__poster__img"
                 style={{
                   backgroundImage: `url(${apiConfig.originalImage(
-                    item.backdrop_path || item.poster_path
+                    item.poster_path || item.backdrop_path 
                   )})`,
                 }}
               ></div>

@@ -13,14 +13,19 @@ import "./credit-card.scss";
 const CreditCard = (props) => {
   const item = props.item;
 
-  // console.log(props);
+  // const sub = [...item.known_for].slice(0, 3);
+
+  // console.log(sub)
+
+  console.log(item);
 
   const link = "/" + category["person"] + "/" + item.id;
 
   const bg = apiConfig.w500image(item.profile_path);
 
+
   return (
-    <Link className="relative block w-10 overflow-hidden rounded-lg credit-card" to={link}>
+    <Link className="credit-card" to={link}>
       <div
         className="credit-card-bg"
         style={{ backgroundImage: `url(${bg})` }}

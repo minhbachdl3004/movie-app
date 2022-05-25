@@ -56,11 +56,11 @@ const DetailCredit = () => {
                   <dt><strong>Known For</strong></dt>
                   <dd>Acting</dd>
                   <dt><strong>Gender</strong></dt>
-                  <dd>{item.gender === 1 ? "Female" : "Male"}</dd>
+                  <dd>{item.gender === 1 ? "Female" : item.gender === 2 ? 'Male' :  "Not specified"}</dd>
                   <dt><strong>Birthday</strong></dt>
-                  <dd>{item.birthday}</dd>
+                  <dd>{item.birthday ? item.birthday : 'Not specified'}</dd>
                   <dt><strong>Place of Birth</strong></dt>
-                  <dd>{item.place_of_birth}</dd>
+                  <dd>{item.place_of_birth ? item.place_of_birth : 'Not specified'}</dd>
                   <dt><strong>Also Known As</strong></dt>
                   <ul>
                     {

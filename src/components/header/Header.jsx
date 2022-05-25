@@ -6,16 +6,16 @@ import logo from "../../assets/tmovie.png";
 
 const headerNav = [
   {
-    display: "Home",
-    path: "/",
-  },
-  {
     display: "Movies",
     path: "/movie",
   },
   {
-    display: "TV Series",
+    display: "TV Shows",
     path: "/tv",
+  },
+  {
+    display: "People",
+    path: "/person",
   },
 ];
 

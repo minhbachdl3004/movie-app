@@ -12,12 +12,12 @@ const ExternalID = (props) => {
   const keyword = "person";
 
   useEffect(() => {
-    const getMoviesCredits = async () => {
+    const getExternal = async () => {
       const res = await tmdbApi.external_ids(keyword, props.id);
       setExternalID(res);
       // console.log(external_ids);
     };
-    getMoviesCredits();
+    getExternal();
   }, [external_ids, props.id]);
 
   return (

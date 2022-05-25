@@ -1,6 +1,6 @@
 @use "../../scss/" as *;
 
-.movie-grid {
+.people-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.25rem;
@@ -20,7 +20,7 @@
     }
 }
 
-.movie-search {
+.person-search {
     position: relative;
     width: 100%;
     max-width: 500px;

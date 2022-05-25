@@ -35,6 +35,12 @@
 .credit-info {
     border-bottom: 1px solid rgb(83, 82, 82);
     background-image: linear-gradient(to top, #252424, rgba(19, 13, 13, 0.075));
+
+    &__name {
+        @include mobile {
+            font-size: 1.5rem;
+        }
+    }
     
 
     &__character {
@@ -43,5 +49,10 @@
         font-weight: 400;
         line-height: 1;
         height: 5rem;
+        
+        @include mobile {
+            font-size: 1.25rem;
+        }
     }
 }
+

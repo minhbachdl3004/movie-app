@@ -3,10 +3,11 @@
 
 input {
     border: 0;
-    background-color: $black;
+    background-color: #3a3b3c;
     padding: .5rem 1.5rem;
     font-size: 1rem;
     border-radius: $border-radius;
     color: $txt-color;
     font-family: $font-family;
+    width: 80%;
 }

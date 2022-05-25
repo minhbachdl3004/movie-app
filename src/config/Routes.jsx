@@ -11,12 +11,12 @@ import Genre from '../pages/Genre';
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/:category/search/:keyword" component={Catalog} />
+      <Route exact path="/:category/search/:keyword" component={Catalog} />
       <Route exact path="/genre/:query" component={Genre} />
       <Route exact path="/person/:id" component={DetailCretdit} />
-      <Route path="/:category/:id" component={Detail} />
-      <Route path="/:category" component={Catalog} />
-      <Route path="/" exact component={Home} />
+      <Route exact path="/:category/:id" component={Detail} />
+      <Route exact path="/:category" component={Catalog} />
+      <Route  path="/" exact component={Home} />
     </Switch>
   );
 };

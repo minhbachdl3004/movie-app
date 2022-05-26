@@ -17,7 +17,7 @@ const CreditCard = (props) => {
 
   // console.log(sub)
 
-  console.log(item);
+  // console.log(item);
 
   const link = "/" + category["person"] + "/" + item.id;
 

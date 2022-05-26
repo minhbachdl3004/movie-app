@@ -12,6 +12,28 @@ import MovieList from "../../components/movie-list/MovieList";
 
 const Detail = () => {
   const { category, id } = useParams();
+  let months = [
+    0,
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  // item.release_date = '2022-03-30'
+
+  const getDate = (releaseDate) => {
+    const date = releaseDate.split("-");
+    return `${months[parseInt(date[1])]} ${date[2]}, ${date[0]}`;
+  };
 
   // console.log(category, id);
 
@@ -20,8 +42,12 @@ const Detail = () => {
   useEffect(() => {
     const getDetail = async () => {
       const response = await tmdbApi.detail(category, id, { params: {} });
+      response.release_date
+        ? (response.release_date = getDate(response.release_date))
+        : (response.first_air_date = getDate(response.first_air_date));
+      console.log(response);
       setItem(response);
-      // console.log(response);
+      console.log(response);
       window.scrollTo(0, 0);
     };
     getDetail();
@@ -45,7 +71,7 @@ const Detail = () => {
                 className="movie-content__poster__img"
                 style={{
                   backgroundImage: `url(${apiConfig.originalImage(
-                    item.poster_path || item.backdrop_path 
+                    item.poster_path || item.backdrop_path
                   )})`,
                 }}
               ></div>
@@ -53,20 +79,27 @@ const Detail = () => {
             <div className="movie-content__info">
               <div className="title">
                 {item.title || item.name}
-                <span className="release-year">
-                  ({item.release_date ? item.release_date.split("-")[0] : item.first_air_date.split("-")[0]})
+                <span className="title release-year">
+                  ({item.release_date ? item.release_date : item.first_air_date}
+                  )
                 </span>
               </div>
               <div className="genres">
                 {item.genres &&
                   item.genres.slice(0, 5).map((genre) => (
-                    <Link to={`/genre/${genre.id}-${category}-${genre.name.replace(/\s+/g, '-')}`}>
+                    <Link
+                      to={`/genre/${genre.id}-${category}-${genre.name.replace(
+                        /\s+/g,
+                        "-"
+                      )}`}
+                    >
                       <span key={genre.id} className="genres__item">
                         {genre.name}
                       </span>
                     </Link>
                   ))}
               </div>
+              <div className="tagline">{item.tagline}</div>
               <div className="overview">{item.overview}</div>
               <div className="cast">
                 <div className="section__header">

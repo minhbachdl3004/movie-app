@@ -36,14 +36,17 @@ const Detail = () => {
   };
 
   const getRunTime = runtime => {
-    if (runtime < 60) return `${runtime}min`;
-    else if(runtime >= 60) {
+    console.log(runtime)
+    if (runtime < 60 && runtime !== 0) return `${runtime}min`;
+    else if (runtime === 60) return `1h`
+    else if(runtime > 60) {
       let hours = runtime / 60;
       let rhours = Math.floor(hours);
       let minutes = (hours - rhours) * 60;
       let rminutes = Math.round(minutes);
       return `${rhours}h ${rminutes}min`;
     }
+    else if (runtime === 0) return 'Unknown';
   }
   // console.log(category, id);
 
@@ -55,9 +58,9 @@ const Detail = () => {
       response.release_date
         ? (response.release_date = getDate(response.release_date))
         : (response.first_air_date = getDate(response.first_air_date));
-      console.log(response);
+      // console.log(response);
       setItem(response);
-      console.log(response.episode_run_time[0]);
+      // console.log(response.episode_run_time[0]);
       window.scrollTo(0, 0);
     };
     getDetail();
@@ -93,21 +96,29 @@ const Detail = () => {
                   {item.release_date ? item.release_date : item.first_air_date}
                 </span>
                 <span className="dot"></span>
-                <span className="runtime">{getRunTime(item.runtime) || getRunTime(item.episode_run_time[0])}</span>
-                <span className="dot"></span>
+                <span className="runtime">
+                  {getRunTime(item.runtime) ||
+                    getRunTime(
+                      item.episode_run_time[0] !== undefined
+                        ? item.episode_run_time[0]
+                        : 0
+                    )}
+                </span>
+                <span className="dot dot-small"></span>
                 <span className="genres">
-                  {item.genres &&
-                    item.genres.slice(0, 5).map((genre) => (
-                      <Link
-                        to={`/genre/${
-                          genre.id
-                        }-${category}-${genre.name.replace(/\s+/g, "-")}`}
-                      >
-                        <span key={genre.id} className="genres__item">
-                          {genre.name}
-                        </span>
-                      </Link>
-                    ))}
+                  {item.genres && item.genres.length > 0
+                    ? item.genres.slice(0, 5).map((genre) => (
+                        <Link
+                          to={`/genre/${
+                            genre.id
+                          }-${category}-${genre.name.replace(/\s+/g, "-")}`}
+                        >
+                          <span key={genre.id} className="genres__item">
+                            {genre.name}
+                          </span>
+                        </Link>
+                      ))
+                    : "Unknown"}
                 </span>
               </div>
               <div className="tagline">{item.tagline}</div>

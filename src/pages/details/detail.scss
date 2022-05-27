@@ -78,17 +78,9 @@
             }
 
             &__item {
-                padding: 0.5rem 1.5rem;
-                border: 2px solid $white;
-                border-radius: $border-radius;
-                font-size: 0.8rem;
-                font-weight: 600;
-                background-color: $body-bg;
-                cursor: pointer;
-            
-            
+                margin-right: 5px;
                 &:hover {
-                    border: 3px solid $main-color;
+                    color: $main-color;
                 }
             }
         }

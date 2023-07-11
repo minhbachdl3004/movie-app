@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import { category } from "../../api/tmdbApi";
 
 import apiConfig from "../../api/apiConfig";
+import MovieScore from "../movie-score/MovieScore";
 
-import UserScore from "../user-score/UserScore";
 
 const MovieCard = (props) => {
   const item = props.item;
@@ -27,7 +27,7 @@ const MovieCard = (props) => {
           className="movie-card-bg ease-in-out"
           style={{ backgroundImage: `url(${bg})` }}
         >
-          <UserScore item={item.vote_average} />
+          <MovieScore item={item.vote_average} />
         </div>
         <div className="movie-info">
           <div className="movie-info__name ">{item.title || item.name}</div>

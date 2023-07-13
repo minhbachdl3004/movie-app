@@ -9,16 +9,13 @@ import tmdbApi, { category } from "../../api/tmdbApi";
 
 import MovieCard from "../movie-card/MovieCard";
 
-const MovieList = props => {
-  
-
-  const [items, setItems] = useState([]);
+const MovieList = (props) => {
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const getList = async () => {
       let response = null;
       const params = {};
-
       if (props.type !== "similar") {
         switch (props.category) {
           case category.movie:
@@ -31,7 +28,7 @@ const MovieList = props => {
         response = await tmdbApi.similar(props.category, props.id);
       }
       // console.log(response.results);
-      setItems(response.results);
+      setMovies(response.results);
     };
     getList();
   }, [props.category, props.id, props.type]);
@@ -39,11 +36,21 @@ const MovieList = props => {
   return (
     <div className="movie-list">
       <Swiper grabCursor={true} spaceBetween={10} slidesPerView={"auto"}>
-        {items.map((item) => (
-          <SwiperSlide key={item.id}>
-            <MovieCard item={item} category={props.category} />
-          </SwiperSlide>
-        ))}
+        {movies &&
+          movies.map((movie) => (
+            <SwiperSlide key={movie.id}>
+              <MovieCard item={movie} category={props.category} />
+            </SwiperSlide>
+          ))}
+
+        {!movies &&
+          [...Array(7)].map((_, index) => (
+            <SwiperSlide key={index}>
+              <div className="skeleton-loading-card"></div>
+              <div className="skeleton-loading-card skeleton-title"></div>
+              <div className="skeleton-loading-card skeleton-release-date"></div>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </div>
   );

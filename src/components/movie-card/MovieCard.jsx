@@ -9,10 +9,8 @@ import MovieScore from "../movie-score/MovieScore";
 
 
 const MovieCard = (props) => {
-  const item = props.item;
 
-  // console.log(item);
-
+  const { item } = props;
   const link = "/" + category[props.category] + "/" + item.id;
 
   const bg = apiConfig.w500image(item.poster_path || item.backdrop_path);

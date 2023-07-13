@@ -10,7 +10,7 @@ import tmdbApi, { category } from "../../api/tmdbApi";
 import MovieCard from "../movie-card/MovieCard";
 
 const MovieList = (props) => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState();
 
   useEffect(() => {
     const getList = async () => {

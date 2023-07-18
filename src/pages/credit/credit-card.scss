@@ -1,58 +1,83 @@
 @use "../../scss/" as *;
 
+.credit-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
+.credit-card-image {
+  position: relative;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  @include tablet {
+    width: 175px;
+    height: 175px;
+  }
+
+  @include mobile {
+    width: 150px;
+    height: 150px;
+  }
+}
 .credit-card-bg {
-    position: relative;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 125%;
-    margin-bottom: 1rem;
+  object-fit: cover;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background-color: $black;
-        opacity: 0;
-        transition: opacity 0.3s ease;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: $black;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover::before {
+      opacity: 0.5;
     }
 
-    @media (hover: hover) and (pointer: fine) {
-        &:hover::before {
-            opacity: 0.5;
-        }
-
-        &:hover .btn {
-            transform: translate(-50%, -50%) scale(1);
-        }
+    &:hover .btn {
+      transform: translate(-50%, -50%) scale(1);
     }
+  }
 }
 
 .credit-info {
-    border-bottom: 1px solid rgb(83, 82, 82);
-    background-image: linear-gradient(to top, #252424, rgba(19, 13, 13, 0.075));
+  overflow: hidden;
+  padding: 0.625rem 2.5rem 0.625rem 0;
 
-    &__name {
-        @include mobile {
-            font-size: 1.5rem;
-        }
+  &__name {
+    max-width: 150px;
+    margin-top: 10px;
+    margin-bottom: -5px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1.5;
+    @include mobile {
+      font-size: 1.5rem;
     }
-    
+  }
 
-    &__character {
-        color: $txt-color;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1;
-        height: 5rem;
-        
-        @include mobile {
-            font-size: 1.25rem;
-        }
+  &__character {
+    color: $txt-color;
+    max-width: 200px;
+    margin-top: 10px;
+    overflow: hidden;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+
+    @include mobile {
+      font-size: 1.25rem;
     }
+  }
 }
-

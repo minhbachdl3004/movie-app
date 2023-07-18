@@ -15,7 +15,7 @@ const MovieScore = (props) => {
             <CircularProgress
               variant="determinate"
               value={item * 10}
-              color={`${item > 7 ? 'success' :  item <=7 && item >5 ? "warning" : "error"}`}
+              color={`${item > 7 ? 'success' :  item <=7 && item > 5 ? "warning" : "error"}`}
             />
           </div>
         </div>

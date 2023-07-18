@@ -81,6 +81,10 @@ iframe {
 
 .section__header {
   @include flex(center, space-between);
+
+  &.overview {
+    margin-bottom: 0.2rem!important;
+  }
 }
 
 

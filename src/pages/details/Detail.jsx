@@ -35,19 +35,18 @@ const Detail = () => {
     return `${months[parseInt(date[1])]} ${date[2]}, ${date[0]}`;
   };
 
-  const getRunTime = runtime => {
-    console.log(runtime)
+  const getRunTime = (runtime) => {
+    console.log(runtime);
     if (runtime < 60 && runtime !== 0) return `${runtime}min`;
-    else if (runtime === 60) return `1h`
-    else if(runtime > 60) {
+    else if (runtime === 60) return `1h`;
+    else if (runtime > 60) {
       let hours = runtime / 60;
       let rhours = Math.floor(hours);
       let minutes = (hours - rhours) * 60;
       let rminutes = Math.round(minutes);
       return `${rhours}h ${rminutes}min`;
-    }
-    else if (runtime === 0) return 'Unknown';
-  }
+    } else if (runtime === 0) return "Unknown";
+  };
   // console.log(category, id);
 
   const [item, setItem] = useState(null);
@@ -122,14 +121,17 @@ const Detail = () => {
                 </span>
               </div>
               <div className="tagline">{item.tagline}</div>
-              <div className="overview">{item.overview}</div>
-              <div className="cast">
-                <div className="section__header">
-                  <h2>Casts</h2>
-                </div>
-                <CastList id={item.id} />
+              <div className="section__header overview">
+                <h2>Overview</h2>
               </div>
+              <div className="overview">{item.overview}</div>
             </div>
+          </div>
+          <div className="cast__list">
+            <div className="cast__list-header">
+              <h2>Top Cast</h2>
+            </div>
+            <CastList id={item.id} />
           </div>
           <div className="container">
             <div className="section mb-3">

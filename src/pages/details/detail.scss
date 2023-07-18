@@ -1,148 +1,161 @@
-@use "../../scss/"as *;
+@use "../../scss/" as *;
 
 .banner {
-    height: 60vh;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  height: 60vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        @include overlay();
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
 
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
 }
 
 .movie-content {
-    @include flex(flex-start, flex-start);
-    max-width: 1260px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -200px;
+  @include flex(flex-start, flex-start);
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+  position: relative;
+  padding: 0 2rem;
+
+  &__poster {
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      padding-top: 165%;
+    }
+  }
+
+  &__info {
+    width: 70%;
+    padding-left: 2rem;
     position: relative;
-    padding: 0 2rem;
 
-    &__poster {
-        flex: 1;
-
-        @include mobile {
-            display: none;
-        }
-
-        &__img {
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            border-radius: $border-radius;
-            padding-top: 165%;
-        }
+    @include mobile {
+      width: 100%;
+      padding-left: 0;
     }
 
-    &__info {
-        width: 70%;
-        padding-left: 2rem;
-        position: relative;
-
-        @include mobile {
-            width: 100%;
-            padding-left: 0;
-        }
-
-        &>* {
-            margin-bottom: 2rem;
-        }
-
-        .title {
-            font-size: 4rem;
-            line-height: 1;
-        }
-
-        .genres {
-            &>*~* {
-                margin-left: 0.5rem;
-            }
-
-            &__item {
-                margin-right: 5px;
-                &:hover {
-                    color: $main-color;
-                }
-            }
-        }
+    & > * {
+      margin-bottom: 2rem;
     }
+
+    .title {
+      font-size: 2.5rem;
+      color: #fff;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .genres {
+      & > * ~ * {
+        margin-left: 0.5rem;
+      }
+
+      &__item {
+        margin-right: 5px;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
 }
 
-
 .video {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 
-    &__title {
-        margin-bottom: 1.5rem;
-    }
+  &__title {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .swiper-slide {
-    width: 20%;
+  width: 175px;
 
-    @include tablet {
-        width: 30%;
-    }
+  @include tablet {
+    width: 175px;
+  }
 
-    @include mobile {
-        width: 40%;
-    }
+  @include mobile {
+    width: 150px;
+  }
 }
 
-
 .release-year {
-    display: inline-block;
-    margin-left: 0.5rem;
+  display: inline-block;
+  margin-left: 0.5rem;
 }
 
 .tagline {
-    border-left: 3px solid $main-color;
-    padding-left: 1rem;
-    margin: 1rem 0px;
-    font-size: 1.3em;
-    font-weight: 400;
-    font-style: italic;
-    color: $main-color;
-    font-family: Changa, sans-serif;
+  border-left: 3px solid $main-color;
+  padding-left: 1rem;
+  margin: 1rem 0px;
+  font-size: 1.3em;
+  font-weight: 400;
+  font-style: italic;
+  color: $main-color;
+  font-family: Changa, sans-serif;
 }
 
-
 .dot {
-    padding-left: 1.75rem;
-    position: relative;
-    top: 0;
-    left: 0;
+  padding-left: 1.75rem;
+  position: relative;
+  top: 0;
+  left: 0;
 
-    &::before {
-        font-size: 1.5em;
-        line-height: 1;
-        content: '\2022';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 7px;
-        display: inline-flex;
-        align-content: center;
-        align-items: center;
-    }
+  &::before {
+    font-size: 1.5em;
+    line-height: 1;
+    content: "\2022";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 7px;
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+.cast__list {
+  max-width: 1260px;
+  padding: 0 2rem;
+  margin-bottom: 5rem;
+
+  &-header {
+    margin-bottom: 20px;
+  }
+
+  @include mobile {
+    padding: 0 2rem 0 2rem;
+  }
 }

@@ -1,14 +1,14 @@
 @use "../../scss/" as *;
 
 .percent {
-  position: absolute;
-  bottom: -5px;
+  position: relative;
   width: 50px;
   height: 50px;
   display: flex;
+  margin-top: 20px;
   justify-content: center;
   align-items: center;
-  padding: 10px 0px 0px 15px;
+  padding: 10px 0px 0px 5px;
 
   & > * {
     background-color: #fff;

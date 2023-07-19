@@ -2,14 +2,14 @@
 
 .movie-list {
   .swiper-slide {
-    width: 264px;
+    width: 236px;
 
     @include tablet {
-      width: 30%;
+      width: 216px;
     }
 
     @include mobile {
-      width: 40%;
+      width: 175px;
     }
   }
 }

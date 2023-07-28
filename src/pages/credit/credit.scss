@@ -1,152 +1,151 @@
 @use "../../scss/" as *;
 
 .banner {
-    height: 60vh;
-    position: relative;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+  height: 60vh;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        @include overlay();
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
 
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
-    }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
 }
 
 .credit-content {
-    @include flex(flex-start, flex-start);
-    max-width: 1260px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -200px;
+  @include flex(flex-start, flex-start);
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+  position: relative;
+  padding: 0 2rem;
+
+  &__poster {
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      padding-top: 165%;
+    }
+  }
+
+  &__info {
+    width: 70%;
+    padding-left: 2rem;
     position: relative;
-    padding: 0 2rem;
 
-    &__poster {
-        flex: 1;
-
-        @include mobile {
-            display: none;
-        }
-
-        &__img {
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            border-radius: $border-radius;
-            padding-top: 165%;
-        }
+    @include mobile {
+      width: 100%;
+      padding-left: 0;
     }
 
-    &__info {
-        width: 70%;
-        padding-left: 2rem;
-        position: relative;
-
-        @include mobile {
-            width: 100%;
-            padding-left: 0;
-        }
-
-        & > * {
-            margin-bottom: 2rem;
-        }
-
-        .name {
-            font-size: 4rem;
-            line-height: 1;
-        }
-
-        .genres {
-            & > * ~ * {
-                margin-left: 0.5rem;
-            }
-
-            &__item {
-                padding: 0.5rem 1.5rem;
-                border: 2px solid $white;
-                border-radius: $border-radius;
-                font-size: 0.8rem;
-                font-weight: 600;
-                background-color: $body-bg;
-            }
-        }
+    & > * {
+      margin-bottom: 2rem;
     }
+
+    .name {
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .genres {
+      & > * ~ * {
+        margin-left: 0.5rem;
+      }
+
+      &__item {
+        padding: 0.5rem 1.5rem;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: $body-bg;
+      }
+    }
+  }
 }
 
 .movies {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-    grid-gap: 55px;
-    
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  grid-gap: 55px;
 
-    &__item {
-        width: 152px;
-        height: 125%;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(243, 240, 240, 0.897);
-        &__img {
-            padding-top: 160px;
-            background-size: cover;
-            margin-bottom: 0.5rem;
-        }
-
-        &__name {
-            font-size: 1rem;
-            margin-left: 5px;
-        }
-
-        & > p {
-            font-size: 0.8rem;
-            margin-left: 5px;
-        }
+  &__item {
+    width: 152px;
+    height: 125%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(243, 240, 240, 0.897);
+    &__img {
+      padding-top: 160px;
+      background-size: cover;
+      margin-bottom: 0.5rem;
     }
+
+    &__name {
+      font-size: 1rem;
+      margin-left: 5px;
+    }
+
+    & > p {
+      font-size: 0.8rem;
+      margin-left: 5px;
+    }
+  }
 }
 
 .bio {
-    font-size: 1.5rem;
-    font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 dt {
-    margin-bottom: 5px;
-    margin-top: 15px;
+  margin-bottom: 5px;
+  margin-top: 15px;
 }
 
 .column p {
-    margin: 0 0 20px 0;
-    font-size: 1em;
-    display: block;
+  margin: 0 0 20px 0;
+  font-size: 1em;
+  display: block;
 }
 
 .additionalName {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 ul {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .social-links {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    cursor: pointer;
-    & > * ~ * {
-        margin-left: 15px;
-    }
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  & > * ~ * {
+    margin-left: 15px;
+  }
 }

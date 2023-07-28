@@ -125,13 +125,13 @@ const Detail = () => {
                 <h2>Overview</h2>
               </div>
               <div className="overview">{item.overview}</div>
+              <div className="cast__list">
+                <div className="cast__list-header">
+                  <h2>Top Cast</h2>
+                </div>
+                <CastList id={item.id} />
+              </div>
             </div>
-          </div>
-          <div className="cast__list">
-            <div className="cast__list-header">
-              <h2>Top Cast</h2>
-            </div>
-            <CastList id={item.id} />
           </div>
           <div className="container">
             <div className="section mb-3">

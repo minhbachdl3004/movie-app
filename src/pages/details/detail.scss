@@ -148,14 +148,11 @@
 
 .cast__list {
   max-width: 1260px;
-  padding: 0 2rem;
-  margin-bottom: 5rem;
 
   &-header {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 
   @include mobile {
-    padding: 0 2rem 0 2rem;
   }
 }
